@@ -1,0 +1,162 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://scenes/underground/underground.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/main/player.png" type="Texture" id=2]
+[ext_resource path="res://scenes/underground/window.png" type="Texture" id=3]
+[ext_resource path="res://scenes/underground/interactable.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/underground/level_5/underground_5.gd" type="Script" id=5]
+[ext_resource path="res://scenes/underground/level_4/pile_of_dirt.png" type="Texture" id=6]
+[ext_resource path="res://scenes/underground/level_4/shovel.png" type="Texture" id=7]
+[ext_resource path="res://scenes/underground/level_5/cage.png" type="Texture" id=8]
+[ext_resource path="res://scenes/underground/level_4/key.png" type="Texture" id=9]
+[ext_resource path="res://scenes/underground/level_5/closet_opened.png" type="Texture" id=10]
+[ext_resource path="res://scenes/underground/level_5/closet_closed.png" type="Texture" id=11]
+[ext_resource path="res://scenes/underground/level_5/ladder.png" type="Texture" id=12]
+[ext_resource path="res://scenes/underground/level_5/window.png" type="Texture" id=13]
+[ext_resource path="res://scenes/underground/level_5/hamster_wheel.png" type="Texture" id=14]
+[ext_resource path="res://scenes/underground/level_5/sleeping_hamster.png" type="Texture" id=15]
+[ext_resource path="res://scenes/underground/level_1/lockpick_ledge.png" type="Texture" id=16]
+[ext_resource path="res://scenes/underground/level_5/hamster_food.png" type="Texture" id=17]
+[ext_resource path="res://scenes/underground/level_5/rope_to_bars.png" type="Texture" id=18]
+[ext_resource path="res://scenes/underground/level_5/rope.png" type="Texture" id=19]
+[ext_resource path="res://scenes/underground/level_5/ham_awake.png" type="Texture" id=20]
+
+[node name="Underground5" instance=ExtResource( 1 )]
+script = ExtResource( 5 )
+level_num = 5
+
+[node name="Player" type="Sprite" parent="." index="1"]
+position = Vector2( 586, 790 )
+texture = ExtResource( 2 )
+flip_h = true
+
+[node name="Cage" type="Sprite" parent="." index="2"]
+position = Vector2( 280, 331 )
+texture = ExtResource( 8 )
+
+[node name="HamsterWheel" type="Sprite" parent="." index="3"]
+position = Vector2( 838, 899 )
+texture = ExtResource( 14 )
+
+[node name="LockpickLedge" type="Sprite" parent="." index="4"]
+position = Vector2( 1521, 388 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 16 )
+
+[node name="RopeToBars" type="Sprite" parent="." index="5"]
+visible = false
+position = Vector2( 956, 608 )
+texture = ExtResource( 18 )
+
+[node name="HamAwake" type="Sprite" parent="." index="6"]
+visible = false
+position = Vector2( 838, 956 )
+texture = ExtResource( 20 )
+
+[node name="Ladder" type="Sprite" parent="." index="7"]
+visible = false
+position = Vector2( 971, 739 )
+texture = ExtResource( 12 )
+
+[node name="ColorRect" type="ColorRect" parent="." index="8"]
+margin_left = -46.0
+margin_top = 644.0
+margin_right = 67.0
+margin_bottom = 1032.0
+color = Color( 0.32549, 0.227451, 0.266667, 1 )
+
+[node name="Window" parent="Control/Interactables" index="0" instance=ExtResource( 4 )]
+margin_left = 821.0
+margin_top = 257.0
+margin_right = 1103.0
+margin_bottom = 406.0
+texture_normal = ExtResource( 3 )
+dialogue = PoolStringArray( "Player|I guess it\'s the only way out now..." )
+
+[node name="Dirt" parent="Control/Interactables" index="1" instance=ExtResource( 4 )]
+margin_left = 82.0
+margin_top = 883.0
+margin_right = 375.0
+margin_bottom = 1022.0
+texture_normal = ExtResource( 6 )
+dialogue = PoolStringArray( "Player|A pile of dirt. Hooray." )
+
+[node name="Shovel" parent="Control/Interactables" index="2" instance=ExtResource( 4 )]
+margin_left = 1784.0
+margin_top = 633.0
+margin_right = 1917.0
+margin_bottom = 1041.0
+rect_rotation = 33.6045
+texture_normal = ExtResource( 7 )
+dialogue = PoolStringArray( "Player|Ooh, another shovel. Or maybe it\'s the same one as before." )
+pickup = true
+
+[node name="Key" parent="Control/Interactables" index="3" instance=ExtResource( 4 )]
+margin_left = 341.0
+margin_top = 382.0
+margin_right = 403.0
+margin_bottom = 497.0
+rect_rotation = 89.9999
+texture_normal = ExtResource( 9 )
+dialogue = PoolStringArray( "Player|I wonder what the key is for\?" )
+
+[node name="Closed" parent="Control/Interactables" index="4" instance=ExtResource( 4 )]
+margin_left = 1115.0
+margin_top = 493.0
+margin_right = 1412.0
+margin_bottom = 1016.0
+texture_normal = ExtResource( 11 )
+dialogue = PoolStringArray( "Player|It\'s a locked closet." )
+
+[node name="Open" parent="Control/Interactables" index="5" instance=ExtResource( 4 )]
+visible = false
+margin_left = 910.0
+margin_top = 478.0
+margin_right = 1426.0
+margin_bottom = 1023.0
+texture_normal = ExtResource( 10 )
+dialogue = PoolStringArray( "Player|It\'s an open closet." )
+
+[node name="Ladder" parent="Control/Interactables" index="6" instance=ExtResource( 4 )]
+visible = false
+margin_left = 1199.0
+margin_top = 474.0
+margin_right = 1368.0
+margin_bottom = 1024.0
+texture_normal = ExtResource( 12 )
+dialogue = PoolStringArray( "Player|It\'s a ladder. I can climb up to the window with this." )
+pickup = true
+
+[node name="NoBars" parent="Control/Interactables" index="7" instance=ExtResource( 4 )]
+visible = false
+margin_left = 821.0
+margin_top = 257.0
+margin_right = 1103.0
+margin_bottom = 406.0
+texture_normal = ExtResource( 13 )
+dialogue = PoolStringArray( "Player|I guess it\'s the only way out now..." )
+
+[node name="Sleep" parent="Control/Interactables" index="8" instance=ExtResource( 4 )]
+margin_left = 794.0
+margin_top = 923.0
+margin_right = 872.0
+margin_bottom = 986.0
+texture_normal = ExtResource( 15 )
+dialogue = PoolStringArray( "Player|A hamster. It\'s sleeping." )
+
+[node name="Food" parent="Control/Interactables" index="9" instance=ExtResource( 4 )]
+margin_left = 1406.0
+margin_top = 153.0
+margin_right = 1620.0
+margin_bottom = 354.0
+texture_normal = ExtResource( 17 )
+dialogue = PoolStringArray( "Player|It\'s hamster food! I can\'t reach it though." )
+
+[node name="Rope" parent="Control/Interactables" index="10" instance=ExtResource( 4 )]
+margin_left = 1369.0
+margin_top = 875.0
+margin_right = 1512.0
+margin_bottom = 1027.0
+texture_normal = ExtResource( 19 )
+dialogue = PoolStringArray( "Player|It\'s some rope!" )
+pickup = true

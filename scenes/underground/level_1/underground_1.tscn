@@ -1,0 +1,58 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://scenes/underground/underground.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/underground/level_1/underground_1.gd" type="Script" id=2]
+[ext_resource path="res://scenes/main/player.png" type="Texture" id=3]
+[ext_resource path="res://scenes/underground/level_1/lockpick_ledge.png" type="Texture" id=4]
+[ext_resource path="res://scenes/underground/interactable.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/underground/window.png" type="Texture" id=6]
+[ext_resource path="res://scenes/underground/level_1/lockpick.png" type="Texture" id=7]
+[ext_resource path="res://scenes/underground/level_1/stick.png" type="Texture" id=8]
+[ext_resource path="res://scenes/underground/door.png" type="Texture" id=9]
+
+[node name="Underground1" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+queue = [ PoolStringArray( "Player|Darn it." ) ]
+level_num = 1
+
+[node name="Player" type="Sprite" parent="." index="2"]
+position = Vector2( 1501, 790 )
+texture = ExtResource( 3 )
+flip_h = true
+
+[node name="Ledge" type="Sprite" parent="." index="3"]
+position = Vector2( 141, 417 )
+texture = ExtResource( 4 )
+
+[node name="Window" parent="Control/Interactables" index="0" instance=ExtResource( 5 )]
+margin_left = 821.0
+margin_top = 257.0
+margin_right = 1103.0
+margin_bottom = 406.0
+texture_normal = ExtResource( 6 )
+dialogue = PoolStringArray( "Player|It\'s a window. Man, I miss the outside. It\'s been like, five minutes already!" )
+
+[node name="Lockpick" parent="Control/Interactables" index="1" instance=ExtResource( 5 )]
+margin_left = 79.0
+margin_top = 342.0
+margin_right = 200.0
+margin_bottom = 382.0
+texture_normal = ExtResource( 7 )
+dialogue = PoolStringArray( "Player|It\'s a lockpick. I can\'t reach it, it\'s too high up." )
+
+[node name="Stick" parent="Control/Interactables" index="2" instance=ExtResource( 5 )]
+margin_left = 466.0
+margin_top = 780.0
+margin_right = 590.0
+margin_bottom = 1021.0
+texture_normal = ExtResource( 8 )
+dialogue = PoolStringArray( "Player|It\'s a stick. What can I do with it\?" )
+pickup = true
+
+[node name="Door" parent="Control/Interactables" index="3" instance=ExtResource( 5 )]
+margin_left = 22.0
+margin_top = 652.0
+margin_right = 62.0
+margin_bottom = 1076.0
+texture_normal = ExtResource( 9 )
+dialogue = PoolStringArray( "Player|The door is locked. I\'m not sure what I expected." )

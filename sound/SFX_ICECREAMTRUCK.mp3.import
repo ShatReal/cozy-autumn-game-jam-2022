@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/SFX_ICECREAMTRUCK.mp3-1db4541b105fcb50d4a88aa42fe6b126.mp3str"
+
+[deps]
+
+source_file="res://sound/SFX_ICECREAMTRUCK.mp3"
+dest_files=[ "res://.import/SFX_ICECREAMTRUCK.mp3-1db4541b105fcb50d4a88aa42fe6b126.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/cheerful_autumn_track.mp3-4269b969946ce77a3a1be1c421111d75.mp3str"
+
+[deps]
+
+source_file="res://sound/cheerful_autumn_track.mp3"
+dest_files=[ "res://.import/cheerful_autumn_track.mp3-4269b969946ce77a3a1be1c421111d75.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

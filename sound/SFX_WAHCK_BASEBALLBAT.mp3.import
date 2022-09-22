@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/SFX_WAHCK_BASEBALLBAT.mp3-85a5533260dc13df6baf26a3412cb49a.mp3str"
+
+[deps]
+
+source_file="res://sound/SFX_WAHCK_BASEBALLBAT.mp3"
+dest_files=[ "res://.import/SFX_WAHCK_BASEBALLBAT.mp3-85a5533260dc13df6baf26a3412cb49a.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

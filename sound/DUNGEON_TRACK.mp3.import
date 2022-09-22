@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/DUNGEON_TRACK.mp3-823eea7016eb11b29bc7bbfdf971e73b.mp3str"
+
+[deps]
+
+source_file="res://sound/DUNGEON_TRACK.mp3"
+dest_files=[ "res://.import/DUNGEON_TRACK.mp3-823eea7016eb11b29bc7bbfdf971e73b.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

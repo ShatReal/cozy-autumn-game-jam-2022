@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/underground/interactable.gd" type="Script" id=1]
+
+[node name="Interactable" type="TextureButton"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 1 )
+
+[connection signal="mouse_entered" from="." to="." method="_on_Interactable_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_Interactable_mouse_exited"]

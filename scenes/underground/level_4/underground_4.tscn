@@ -1,0 +1,105 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://scenes/underground/underground.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/underground/door.png" type="Texture" id=2]
+[ext_resource path="res://scenes/underground/window.png" type="Texture" id=3]
+[ext_resource path="res://scenes/underground/interactable.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/underground/level_4/box.png" type="Texture" id=5]
+[ext_resource path="res://scenes/main/player.png" type="Texture" id=6]
+[ext_resource path="res://scenes/underground/level_4/crack.png" type="Texture" id=7]
+[ext_resource path="res://scenes/underground/level_4/stick.png" type="Texture" id=8]
+[ext_resource path="res://scenes/underground/level_4/spring.png" type="Texture" id=9]
+[ext_resource path="res://scenes/underground/level_4/pile_of_dirt.png" type="Texture" id=10]
+[ext_resource path="res://scenes/underground/level_4/shovel.png" type="Texture" id=11]
+[ext_resource path="res://scenes/underground/level_4/detonator.png" type="Texture" id=12]
+[ext_resource path="res://scenes/underground/level_4/underground_4.gd" type="Script" id=13]
+[ext_resource path="res://scenes/underground/level_4/door_destroyed.png" type="Texture" id=14]
+
+[node name="Underground4" instance=ExtResource( 1 )]
+script = ExtResource( 13 )
+level_num = 4
+
+[node name="Player" type="Sprite" parent="." index="1"]
+position = Vector2( 1114, 786 )
+texture = ExtResource( 6 )
+flip_h = true
+
+[node name="Destroyed" type="Sprite" parent="." index="2"]
+position = Vector2( 42, 845 )
+texture = ExtResource( 14 )
+
+[node name="Window" parent="Control/Interactables" index="0" instance=ExtResource( 4 )]
+margin_left = 821.0
+margin_top = 257.0
+margin_right = 1103.0
+margin_bottom = 406.0
+texture_normal = ExtResource( 3 )
+dialogue = PoolStringArray( "Player|So close, yet so far." )
+
+[node name="Door" parent="Control/Interactables" index="1" instance=ExtResource( 4 )]
+margin_left = 22.0
+margin_top = 652.0
+margin_right = 62.0
+margin_bottom = 1076.0
+texture_normal = ExtResource( 2 )
+dialogue = PoolStringArray( "Player|(rattle rattle) It\'s still locked. Guess I can\'t waltz out." )
+
+[node name="Box" parent="Control/Interactables" index="2" instance=ExtResource( 4 )]
+margin_left = 366.0
+margin_top = 761.0
+margin_right = 605.0
+margin_bottom = 1022.0
+texture_normal = ExtResource( 5 )
+dialogue = PoolStringArray( "Player|I\'m guessing there\'s something explosive inside based on the writing. It\'s locked." )
+
+[node name="Crack" parent="Control/Interactables" index="3" instance=ExtResource( 4 )]
+margin_left = 640.0
+margin_top = 785.0
+margin_right = 848.0
+margin_bottom = 1019.0
+texture_normal = ExtResource( 7 )
+dialogue = PoolStringArray( "Player|There\'s something in that crack but I can\'t reach it." )
+
+[node name="Stick" parent="Control/Interactables" index="4" instance=ExtResource( 4 )]
+margin_left = 1408.0
+margin_top = 208.0
+margin_right = 1511.0
+margin_bottom = 456.0
+texture_normal = ExtResource( 8 )
+dialogue = PoolStringArray( "Player|A stick. I can\'t reach it. If only I could jump higher..." )
+
+[node name="Spring" parent="Control/Interactables" index="5" instance=ExtResource( 4 )]
+margin_left = 81.0
+margin_top = 787.0
+margin_right = 326.0
+margin_bottom = 1029.0
+texture_normal = ExtResource( 9 )
+dialogue = PoolStringArray( "Player|It\'s a spring! Whee!" )
+pickup = true
+
+[node name="Shovel" parent="Control/Interactables" index="6" instance=ExtResource( 4 )]
+margin_left = 1576.0
+margin_top = 608.0
+margin_right = 1709.0
+margin_bottom = 1016.0
+texture_normal = ExtResource( 11 )
+dialogue = PoolStringArray( "Player|Shovels are for digging!" )
+pickup = true
+
+[node name="Dirt" parent="Control/Interactables" index="7" instance=ExtResource( 4 )]
+margin_left = 1240.0
+margin_top = 882.0
+margin_right = 1533.0
+margin_bottom = 1021.0
+texture_normal = ExtResource( 10 )
+dialogue = PoolStringArray( "Player|It\'s a pile of dirt." )
+
+[node name="Detonator" parent="Control/Interactables" index="8" instance=ExtResource( 4 )]
+visible = false
+margin_left = 1365.0
+margin_top = 919.0
+margin_right = 1414.0
+margin_bottom = 1021.0
+texture_normal = ExtResource( 12 )
+dialogue = PoolStringArray( "Player|I can use this detonator with the explosives." )
+pickup = true

@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/ground/background_ground.png" type="Texture" id=1]
+[ext_resource path="res://scenes/main/dialogue.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/ground/ground.gd" type="Script" id=3]
+[ext_resource path="res://sound/cheerful_autumn_track.mp3" type="AudioStream" id=4]
+
+[node name="Ground" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Background" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="Dialogue" parent="." instance=ExtResource( 2 )]
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+autoplay = true
+bus = "Music"
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="done" from="Dialogue" to="." method="_on_Dialogue_done"]

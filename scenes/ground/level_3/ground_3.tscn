@@ -1,0 +1,357 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://scenes/ground/ground.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/main/player.png" type="Texture" id=2]
+[ext_resource path="res://scenes/ground/level_3/helmet.png" type="Texture" id=3]
+[ext_resource path="res://scenes/ground/level_3/ice_cream_truck.png" type="Texture" id=4]
+[ext_resource path="res://scenes/ground/level_3/ice_cream.png" type="Texture" id=5]
+[ext_resource path="res://resources/main_theme.tres" type="Theme" id=6]
+[ext_resource path="res://sound/SFX_ICECREAMTRUCK.mp3" type="AudioStream" id=7]
+[ext_resource path="res://sound/SFX_THUD_FALLING.mp3" type="AudioStream" id=8]
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("IceCreamTruck:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 2442, 663 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("IceCreamTruck:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Player:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 549, 729 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Player:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("IceCream:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("IceCream:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 582, 748 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("IceCream:rotation_degrees")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Thud:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Thud:rect_scale")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("ThudSound:playing")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "ice_cream"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/path = NodePath("Player:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 549, 729 ), Vector2( 549, 672 ), Vector2( 549, 729 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Player:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("IceCream:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("IceCream:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1234, 559 ), Vector2( 1234, 559 ), Vector2( 582, 748 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("IceCream:rotation_degrees")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 0.0 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "thud"
+tracks/0/type = "value"
+tracks/0/path = NodePath("IceCream:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 582, 748 ), Vector2( 763, 964 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("IceCream:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 92.6866 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Player:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 549, 729 ), Vector2( 783.685, 914.571 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Player:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 92.6866 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Thud:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Thud:rect_scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 2, 2 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("ThudSound:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "truck_in"
+length = 0.9
+tracks/0/type = "value"
+tracks/0/path = NodePath("IceCreamTruck:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 0.6, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 2442, 663 ), Vector2( 1261, 663 ), Vector2( 1261, 663 ), Vector2( 1261, 677 ), Vector2( 1261, 663 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("IceCreamTruck:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 0.6, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, -12.0572, 0.0, 0.0 ]
+}
+
+[node name="Ground3" instance=ExtResource( 1 )]
+queue = [ PoolStringArray( "Player|They\'re not going to get me this time!" ), "truck_in", PoolStringArray( "\?\?\?|Hey, want some ice cream\?" ), "ice_cream", PoolStringArray( "Player|Sure! Om nom nom nom!" ), "thud" ]
+
+[node name="Player" type="Sprite" parent="." index="1"]
+position = Vector2( 549, 729 )
+texture = ExtResource( 2 )
+
+[node name="Helmet" type="Sprite" parent="Player" index="0"]
+position = Vector2( 57, -132 )
+texture = ExtResource( 3 )
+
+[node name="IceCreamTruck" type="Sprite" parent="." index="2"]
+position = Vector2( 2442, 663 )
+texture = ExtResource( 4 )
+
+[node name="IceCream" type="Sprite" parent="." index="3"]
+visible = false
+position = Vector2( 582, 748 )
+texture = ExtResource( 5 )
+
+[node name="Thud" type="Label" parent="." index="4"]
+visible = false
+margin_left = 727.0
+margin_top = 1003.0
+margin_right = 866.0
+margin_bottom = 1055.0
+rect_pivot_offset = Vector2( 69, 17 )
+theme = ExtResource( 6 )
+text = "THUD"
+
+[node name="AnimationPlayer" parent="." index="5"]
+anims/RESET = SubResource( 1 )
+anims/ice_cream = SubResource( 3 )
+anims/thud = SubResource( 4 )
+anims/truck_in = SubResource( 2 )
+
+[node name="Jingle" type="AudioStreamPlayer" parent="." index="7"]
+stream = ExtResource( 7 )
+autoplay = true
+bus = "Music"
+
+[node name="ThudSound" type="AudioStreamPlayer" parent="." index="8"]
+stream = ExtResource( 8 )
+bus = "Sound"

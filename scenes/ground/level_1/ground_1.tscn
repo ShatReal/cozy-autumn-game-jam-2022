@@ -1,0 +1,82 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scenes/main/player.png" type="Texture" id=1]
+[ext_resource path="res://scenes/main/figure.png" type="Texture" id=2]
+[ext_resource path="res://scenes/ground/ground.tscn" type="PackedScene" id=3]
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Figure:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 2127, 748 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Figure:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=1]
+resource_name = "figure_walk_in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Figure:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 2127, 748 ), Vector2( 1041, 748 ), Vector2( 1109, 748 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Figure:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, -38.8265, 0.0 ]
+}
+
+[node name="Ground1" instance=ExtResource( 3 )]
+queue = [ PoolStringArray( "Player|I love autumn! I sure hope someone doesn\'t kidnap me and lock me up in some dungeon!" ), "figure_walk_in", PoolStringArray( "\?\?\?|Hey, smell this.", "Player|Sure, okay." ) ]
+
+[node name="AnimationPlayer" parent="." index="1"]
+anims/RESET = SubResource( 2 )
+anims/figure_walk_in = SubResource( 1 )
+
+[node name="Player" type="Sprite" parent="." index="2"]
+position = Vector2( 590, 731 )
+texture = ExtResource( 1 )
+
+[node name="Figure" type="Sprite" parent="." index="3"]
+position = Vector2( 2127, 748 )
+texture = ExtResource( 2 )
+
+[node name="Dialogue" parent="." index="4"]
+margin_right = 1920.0
+margin_bottom = 1080.0
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="done" from="Dialogue" to="." method="_on_Dialogue_done"]

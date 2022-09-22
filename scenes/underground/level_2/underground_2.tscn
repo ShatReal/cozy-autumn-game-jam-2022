@@ -1,0 +1,71 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://scenes/underground/underground.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/underground/level_2/underground_2.gd" type="Script" id=2]
+[ext_resource path="res://scenes/main/player.png" type="Texture" id=3]
+[ext_resource path="res://scenes/underground/window.png" type="Texture" id=4]
+[ext_resource path="res://scenes/underground/interactable.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/underground/level_2/box.png" type="Texture" id=6]
+[ext_resource path="res://scenes/underground/door.png" type="Texture" id=7]
+[ext_resource path="res://scenes/underground/level_2/hole.png" type="Texture" id=8]
+[ext_resource path="res://scenes/underground/level_2/key.png" type="Texture" id=9]
+[ext_resource path="res://scenes/underground/level_2/mouse.png" type="Texture" id=10]
+
+[node name="Underground2" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+__meta__ = {
+"_editor_description_": ""
+}
+queue = [ PoolStringArray( "Player|Not this again!" ) ]
+level_num = 2
+
+[node name="Player" type="Sprite" parent="." index="1"]
+position = Vector2( 1105, 789 )
+texture = ExtResource( 3 )
+
+[node name="Window" parent="Control/Interactables" index="0" instance=ExtResource( 5 )]
+margin_left = 821.0
+margin_top = 257.0
+margin_right = 1103.0
+margin_bottom = 406.0
+texture_normal = ExtResource( 4 )
+dialogue = PoolStringArray( "Player|I can see the outside from here. I still miss it!" )
+
+[node name="Box" parent="Control/Interactables" index="1" instance=ExtResource( 5 )]
+margin_left = 343.0
+margin_top = 846.0
+margin_right = 644.0
+margin_bottom = 1015.0
+texture_normal = ExtResource( 6 )
+dialogue = PoolStringArray( "Player|Let\'s see what\'s inside this box!", "Player|Oh, it\'s... cheese\?" )
+
+[node name="Door" parent="Control/Interactables" index="2" instance=ExtResource( 5 )]
+margin_left = 22.0
+margin_top = 652.0
+margin_right = 62.0
+margin_bottom = 1076.0
+texture_normal = ExtResource( 7 )
+dialogue = PoolStringArray( "Player|The door\'s still locked. Ouch." )
+
+[node name="Hole" parent="Control/Interactables" index="3" instance=ExtResource( 5 )]
+margin_left = 1454.0
+margin_top = 953.0
+margin_right = 1518.0
+margin_bottom = 1019.0
+texture_normal = ExtResource( 8 )
+dialogue = PoolStringArray( "Player|It\'s a mouse hole! Here mousey mousey!" )
+
+[node name="Mouse" type="Sprite" parent="Control/Interactables/Hole" index="0"]
+visible = false
+position = Vector2( 27, 42 )
+texture = ExtResource( 10 )
+
+[node name="Key" parent="Control/Interactables" index="4" instance=ExtResource( 5 )]
+visible = false
+margin_left = 1504.0
+margin_top = 976.0
+margin_right = 1606.0
+margin_bottom = 1019.0
+texture_normal = ExtResource( 9 )
+dialogue = PoolStringArray( "Player|Thanks, Mr. Mouse!" )
+pickup = true

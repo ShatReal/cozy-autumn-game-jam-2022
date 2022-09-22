@@ -1,0 +1,82 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://scenes/underground/underground.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/underground/door.png" type="Texture" id=2]
+[ext_resource path="res://scenes/underground/window.png" type="Texture" id=3]
+[ext_resource path="res://scenes/underground/interactable.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/main/player.png" type="Texture" id=5]
+[ext_resource path="res://scenes/underground/level_3/axe.png" type="Texture" id=6]
+[ext_resource path="res://scenes/underground/level_3/chain.png" type="Texture" id=7]
+[ext_resource path="res://scenes/underground/level_3/ice_block.png" type="Texture" id=8]
+[ext_resource path="res://scenes/underground/level_3/underground_3.gd" type="Script" id=9]
+[ext_resource path="res://scenes/underground/level_3/hot_plate.png" type="Texture" id=10]
+[ext_resource path="res://scenes/underground/level_3/bow.png" type="Texture" id=11]
+[ext_resource path="res://scenes/underground/level_3/door_destroyed.png" type="Texture" id=12]
+
+[node name="Underground3" instance=ExtResource( 1 )]
+script = ExtResource( 9 )
+level_num = 3
+
+[node name="Chain" type="Sprite" parent="." index="2"]
+position = Vector2( 237, 256 )
+texture = ExtResource( 7 )
+
+[node name="DoorDestroyed" type="Sprite" parent="." index="3"]
+visible = false
+position = Vector2( 23, 837 )
+texture = ExtResource( 12 )
+
+[node name="Player" type="Sprite" parent="." index="4"]
+position = Vector2( 527, 795 )
+texture = ExtResource( 5 )
+
+[node name="Window" parent="Control/Interactables" index="0" instance=ExtResource( 4 )]
+margin_left = 821.0
+margin_top = 257.0
+margin_right = 1103.0
+margin_bottom = 406.0
+texture_normal = ExtResource( 3 )
+dialogue = PoolStringArray( "Player|Weird how the sky is orange, huh\?" )
+
+[node name="Door" parent="Control/Interactables" index="1" instance=ExtResource( 4 )]
+margin_left = 22.0
+margin_top = 652.0
+margin_right = 62.0
+margin_bottom = 1076.0
+texture_normal = ExtResource( 2 )
+dialogue = PoolStringArray( "Player|Still locked. Let me try again. Nope, still locked." )
+
+[node name="Axe" parent="Control/Interactables" index="2" instance=ExtResource( 4 )]
+margin_left = 222.0
+margin_top = 264.0
+margin_right = 360.0
+margin_bottom = 575.0
+texture_normal = ExtResource( 6 )
+dialogue = PoolStringArray( "Player|I\'m too short to reach it! No, I don\'t feel like raising my arms." )
+
+[node name="Ice" parent="Control/Interactables" index="3" instance=ExtResource( 4 )]
+margin_left = 994.0
+margin_top = 843.0
+margin_right = 1333.0
+margin_bottom = 1024.0
+texture_normal = ExtResource( 8 )
+dialogue = PoolStringArray( "Player|Why is there just a block of ice sitting here\?" )
+
+[node name="Hotplate" parent="Control/Interactables" index="4" instance=ExtResource( 4 )]
+margin_left = 128.0
+margin_top = 913.0
+margin_right = 325.0
+margin_bottom = 1022.0
+texture_normal = ExtResource( 10 )
+dialogue = PoolStringArray( "Player|It\'s a hotplate. Should I cook something with it\?" )
+pickup = true
+
+[node name="Bow" parent="Control/Interactables" index="5" instance=ExtResource( 4 )]
+visible = false
+margin_left = 1073.0
+margin_top = 863.0
+margin_right = 1266.0
+margin_bottom = 1016.0
+texture_normal = ExtResource( 11 )
+dialogue = PoolStringArray( "Player|Sweet, something to shoot!" )
+pickup = true
