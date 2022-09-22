@@ -1,6 +1,6 @@
 # cozy-autumn-game-jam-2022
 Source code for https://emily2.itch.io/kidnapped-again
 
-Art and programming by [https://emily2.itch.io/](Exuin)
+Art and programming by [Exuin](https://emily2.itch.io/)
 Sound and music by pablovamil
-Font used - [https://www.dafont.com/vividly.font](Vividly)
+Font used - [Vividly](https://www.dafont.com/vividly.font)
